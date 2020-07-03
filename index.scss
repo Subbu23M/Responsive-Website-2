@@ -1,0 +1,258 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.background{
+    background: #307D99 url(../Gallery/bg.jpg);
+    background-position: 12% 83%;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 4em;
+
+    a{
+        text-decoration: none;
+        color: #fff;
+        padding-top: 1em;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    section {
+        .top{
+            margin: 0em 1em; 
+        }
+
+        h1{
+            font-size: 2.5rem;
+            margin: 2em 0em 1.2em;
+
+            span{
+                text-transform: uppercase;
+                display: block;
+                font-size: 1.4rem;
+                position: relative;
+                z-index: 1;
+            }
+            
+        }
+    } 
+    p{
+        font-weight: bold;
+        margin: 0 1em 3em;
+    }      
+
+    .form-container{
+        background: #fff;
+        margin: 2em -1em 0;
+        padding: 2em;
+
+        label{
+            color: #2D7D98;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 1em;
+            font-size: 1.2em;
+        }
+
+        p{
+            color: gray;
+            margin-bottom: 1.5em;
+            font-weight: normal;
+            font-size: .9em;
+            margin-top: .3em;
+        }
+    }
+}
+
+h1 span::before{
+    content: '';
+    position: absolute;
+    width: 3em;
+    background-color: #00BFFF;
+    height: 0.3em;
+    bottom: 0;
+    z-index: -1;
+    margin-left: -.3em;
+}
+
+.city1{
+    border: 1px solid #707070;
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: .5em;
+    margin-top: 1.2em;
+}
+
+.button{
+    background-color: #F89104;
+    border: none;
+    width: 100%;
+    color: #fff;
+    font-weight: bold;
+    padding: 1em 0;
+    border-radius: .2em;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+
+.bottom{
+    margin: 0;
+
+    .right-column{
+        text-align: center;
+        margin: 3em 1em;
+
+        h2{
+            text-transform: uppercase;
+            position: relative;
+        }
+    }
+    img{
+        width: 100%;
+    }
+
+    p{
+        line-height: 2em;
+    }
+}
+
+h2::before{
+    content: '';
+    position: absolute;
+    width: 9em;
+    background-color: #00BFFF;
+    height: 0.3em;
+    bottom: 0;
+    z-index: -1;
+    margin-left: -.3em;
+}
+
+.overlay{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,.9);
+    z-index: 1;
+    place-content: center;
+    color: #fff;
+    display: none;
+    opacity: 0;
+}
+
+.animate-overlay{
+    animation: overlay 3s forwards;
+}
+
+// Media Queries
+@media (min-width:730px){
+.top{
+        margin: 0 4em;
+    }
+    .form-container{
+        margin: 2em -4em 0;
+    }
+}
+
+@media (min-width:930px){
+    .background{
+        text-align: left;
+    }
+
+    .background p{
+        margin: 0 0 3em;
+    }
+
+    .background section{
+        width: 65%;
+    }
+
+    .form-container{
+        margin: 2em 0 0;
+        padding: 2em;
+        border-radius: .5em;
+        box-shadow: 10px 10px 10px rgba(0,0,0,.3em);
+    }
+    form{
+        display: flex;
+    }
+
+    .left-form{
+        width: 70%;
+    }
+
+    label{
+        margin: 0;
+    }
+
+    .button{
+        height: min-content;
+        font-size: 1.1em;
+        margin-left: 1em;
+        margin-top: 2.9em;
+        padding: .8em 0;
+        width: 40%;
+    }
+
+    .form-container p{
+        margin-bottom: 0;
+    }
+
+    .bottom{
+        display: grid;
+        grid-template-columns: repeat(2,50%);
+        grid-template-areas:
+        "bowl content"
+    }
+
+    .right-column{
+        grid-area: content;
+        padding: 0 10%;
+        text-align: left;
+        align-self: center;
+    }
+
+    img{
+        grid-area: bowl;
+    }
+
+    .bottom h2{
+        margin: 0;
+    }
+}
+
+.top{
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(-2em);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes overlay{
+    0%{
+        opacity: 0;
+    }
+
+    30%{
+        opacity: 1;
+    }
+
+    70%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
